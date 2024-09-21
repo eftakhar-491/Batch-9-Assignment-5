@@ -70,10 +70,8 @@
             <div
               class="flex items-center bg-[#1DD10026] px-2 rounded-md text-[#1DD100]"
             >
-              <img class="mr-2" src="./images/seat-green.png" alt="" /><span
-                class="mr-1 font-bold"
-                >40
-              </span>
+              <img class="mr-2" src="./images/seat-green.png" alt="" />
+              <span class="total-seat-avalable mr-1 font-bold">40 </span>
               Seats left
             </div>
           </div>
@@ -156,39 +154,48 @@
             <div class="font-bold flex justify-between items-center mt-4">
               <p>
                 Seat
-                <sup class="bg-[#1DD100] p-[2px] rounded-lg text-white">2</sup>
+                <sup
+                  class="total-seat-add bg-[#1DD100] p-[2px] rounded-lg text-white"
+                  >0</sup
+                >
               </p>
               <p>class</p>
               <p>price</p>
             </div>
-            <div class="flex justify-between">
+            <div class="seat-data"></div>
+            <!-- <div class="flex justify-between">
               <p>seat no</p>
               <p>Economoy</p>
               <p>550</p>
-            </div>
+            </div> -->
           </div>
           <br />
           <hr />
           <div class="flex justify-between mt-3">
             <p>Total Price</p>
-            <p>BDT <span>1000</span></p>
+            <p>BDT <span class="total-price">****</span></p>
           </div>
-          <div class="h-9 flex justify-between bg-white rounded-xl mt-3">
+          <div class="cuppon h-9 flex justify-between bg-white rounded-xl mt-3">
             <input
+              disabled
               type="text"
-              class="border-none outline-none rounded-xl ml-3"
+              placeholder="cuppon"
+              class="outline-none rounded-xl ml-3"
             />
-            <button class="bg-[#1DD100] px-4 rounded-xl text-white">
+            <button
+              disabled
+              class="cuppon-apply bg-[#1DD100] px-4 rounded-xl text-white"
+            >
               Apply</button
             ><br />
           </div>
-          <!-- <div class="flex justify-between">
-              <p>Discount</p>
-              <p>-500</p>
-            </div> -->
+          <div class="flex justify-between invisible">
+            <p>Discount</p>
+            <p>- <span class="discount">5</span></p>
+          </div>
           <div class="flex justify-between mt-4">
             <p>Grand Total</p>
-            <p>BDT <span>11000</span></p>
+            <p>BDT <span class="grand-total">****</span></p>
           </div>
         </div>
       </section>
