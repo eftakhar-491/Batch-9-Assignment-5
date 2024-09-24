@@ -1,24 +1,24 @@
 function seatAdd(seatNo) {
   return `
-     <p class="px-9 py-2">${seatNo[0]}</p>
+     <p class="flex justify-center items-center">${seatNo[0]}</p>
             <button
-              class="seat-number duration-200 ease-in-out hover:bg-slate-600 hover:text-white px-9 py-2 text-lg flex justify-center rounded-lg bg-[#0307121A]"
+              class="seat-number font-semibold active:bg-[#1DD100] w-full py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
             >
             ${seatNo[1]}
             </button>
             <button
-              class="seat-number px-9 py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
+              class="seat-number font-semibold active:bg-[#1DD100] w-full py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
             >
             ${seatNo[2]}
             </button>
             <p></p>
             <button
-              class="seat-number px-9 py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
+              class="seat-number font-semibold active:bg-[#1DD100] w-full py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
             >
             ${seatNo[3]}
             </button>
             <button
-              class="seat-number px-9 py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
+              class="seat-number font-semibold active:bg-[#1DD100] w-full py-2 duration-200 ease-in-out hover:bg-slate-600 hover:text-white text-lg flex justify-center rounded-lg bg-[#0307121A]"
             >
             ${seatNo[4]}
             </button>
@@ -51,6 +51,18 @@ function seat(data) {
 </div>
 `;
 }
+document.querySelector(".purchase").addEventListener("click", () => {
+  console.log(77);
+});
+document.querySelector(".phone-number").addEventListener("input", (e) => {
+  let buy = e.target.value;
+  console.log(buy.length);
+  if (buy.length === 11) {
+    document.querySelector(".purchase").removeAttribute("disabled");
+  } else {
+    document.querySelector(".purchase").setAttribute("disabled", true);
+  }
+});
 
 cupponApply.addEventListener("click", (e) => {
   let g = e.target.previousElementSibling.value;
@@ -67,7 +79,7 @@ cupponApply.addEventListener("click", (e) => {
 for (const seatNumber of seatNumbers) {
   seatNumber.addEventListener("click", (e) => {
     if (x.includes(e.target.innerText)) {
-      e.target.classList.toggle("bg-green-800");
+      e.target.classList.toggle("bg-[#1DD100]");
       totalSeatAvalable.innerText = Number(totalSeatAvalable.innerText) + 1;
       x.splice(x.indexOf(e.target.innerText), 1);
       totalSeatAdd.innerText = x.length;
@@ -89,7 +101,7 @@ for (const seatNumber of seatNumbers) {
       x.push(e.target.innerText);
       totalSeatAdd.innerText = x.length;
       totalSeatAvalable.innerText = Number(totalSeatAvalable.innerText) - 1;
-      e.target.classList.toggle("bg-green-800");
+      e.target.classList.toggle("bg-[#1DD100]");
       seatData.innerHTML = "";
       x.forEach((item) => {
         seatData.innerHTML += seat(item);
@@ -111,6 +123,11 @@ for (const seatNumber of seatNumbers) {
         "disabled",
         true
       );
+    }
+    if (x.length > 0) {
+      document.querySelector(".xxx").classList.add("hidden");
+    } else if (x.length === 0) {
+      document.querySelector(".xxx").classList.remove("hidden");
     }
   });
 }
