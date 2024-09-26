@@ -34,12 +34,12 @@
             Bus<img src="./images/bus-icon.png" alt="bus-icon" />
           </button>
           <img
-            class="lg:hidden bg-[#1DD1001A] border-2 border-[#1DD10066] rounded-lg p-2 w-12 cursor-pointer"
+            class="menu lg:hidden bg-[#1DD1001A] border-2 border-[#1DD10066] rounded-lg p-2 w-12 cursor-pointer"
             src="./images/menu.png"
             alt=""
           />
           <ul
-            class="absolute top-[90px] right-7 text-center lg:flex flex-col gap-2 justify-center items-center bg-slate-200 p-5 rounded-md lg:invisible"
+            class="phone-menu absolute top-[90px] right-7 text-center hidden flex-col gap-2 justify-center items-center bg-slate-200 p-5 rounded-md"
           >
             <li class="hover:bg-slate-400 rounded-md w-40">Home</li>
             <li class="hover:bg-slate-400 rounded-md">About</li>
@@ -134,7 +134,7 @@
         See All Offers
       </button>
       <section
-        class="bg-[#F7F8F8] border-t-8 border-t-[#1DD100] rounded-t-[100px] mb-52 pb-16"
+        class="bg-[#F7F8F8] border-t-8 border-t-[#1DD100] rounded-t-[100px] pb-16"
       >
         <h1 class="pt-12 text-center text-3xl mb-4 font-bold text-[#030712]">
           P.H Paribahan
@@ -337,7 +337,34 @@
           </div>
         </section>
       </section>
+      <!-- modal -->
     </main>
+    <section
+      class="modal hidden w-full h-screen justify-center items-center bg-[#00000090] fixed top-0 z-50"
+    >
+      <div
+        class="max-w-[400px] p-6 flex flex-col items-center justify-center bg-white rounded-xl"
+      >
+        <img class="w-16 mb-5" src="./images/success.png" alt="" />
+        <h1 class="text-xl font-bold text-[#27AE60]">SICCESS</h1>
+        <p class="text-sm py-2 text-center">
+          Thank you for Booking Our Bus Seats. We are working hard to find the
+          best service and deals for you. <br />
+          <span class="text-[12px] text-[#191818]">
+            Shortly you will find a confirmation in your email.
+          </span>
+        </p>
+        <button
+          class="success active:bg-[#40c376] hover:bg-[#196b3b] px-9 py-2 rounded-3xl bg-[#27AE60]"
+        >
+          Continue
+        </button>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <img src="./images/footer.JPG" alt="" />
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -51,8 +51,18 @@ function seat(data) {
 </div>
 `;
 }
+document.querySelector(".menu").addEventListener("click", () => {
+  document.querySelector(".phone-menu").classList.toggle("hidden");
+  document.querySelector(".phone-menu").classList.toggle("flex");
+});
+document.querySelector(".success").addEventListener("click", () => {
+  document.querySelector(".modal").classList.toggle("hidden");
+  document.querySelector(".modal").classList.toggle("flex");
+  document.location.reload();
+});
 document.querySelector(".purchase").addEventListener("click", () => {
-  console.log(77);
+  document.querySelector(".modal").classList.toggle("hidden");
+  document.querySelector(".modal").classList.toggle("flex");
 });
 document.querySelector(".phone-number").addEventListener("input", (e) => {
   let buy = e.target.value;
@@ -66,11 +76,12 @@ document.querySelector(".phone-number").addEventListener("input", (e) => {
 
 cupponApply.addEventListener("click", (e) => {
   let g = e.target.previousElementSibling.value;
-  if ("e99" == g) {
+  if ("new15" == g.toLowerCase()) {
     discount.parentElement.parentElement.classList.remove("invisible");
     cupponApply.parentElement.classList.add("hidden");
     cupponApply.parentElement.classList.remove("flex");
-    dd = 500;
+
+    dd = (Number(totalPrice.innerText) * 15) / 100;
     discount.innerText = dd;
     grandTotal.innerText = Number(totalPrice.innerText) - dd;
   }
